@@ -32,14 +32,14 @@ for _ in range(4):
     obstacle.left(90)
 obstacle.end_fill()
 
-# 시작-종점 이동 로직 시작
+#### 시작-종점 이동 로직 시작 ####
 t.penup() # 선x
 t.goto(-400, -300) # 시작점
 t.pendown() # 선o
 
 t.setheading(30) # 회전
 
-#### 장애물 우회해서 이동 ### 
+#### 장애물 우회해서 이동 ####
 # 장애물까지 직진 (장애물 왼쪽 아래 전까지 이동)
 t.setheading(t.towards(-100, -100))  # 장애물 전 지점으로 향함
 t.goto(-100, -100)
@@ -54,13 +54,13 @@ t.forward(200)
 t.setheading(20)    # 방향 조정
 t.goto(400, 300) # 종점 도착
 
-# 종점 도착 확인용 코드 추가
+#### 종점 도착 확인용 ####
 print('현재 위치 : ', t.pos())
 start = (-400, -300)
 current = t.pos() # 현재 위치 좌표 확인
 # 거리계산 함수 호출
 fin = manhattan_distance(start, current)
 
-# 현재 위치와 distance를 비교
+# fin과 distance를 비교
 if fin == distance:
     print('⭐⭐⭐종점에 도착했습니다.⭐⭐')
