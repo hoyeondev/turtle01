@@ -54,4 +54,13 @@ t.forward(200)
 t.setheading(20)    # 방향 조정
 t.goto(400, 300) # 종점 도착
 
+# 종점 도착 확인용 코드 추가
+print('현재 위치 : ', t.pos())
+start = (-400, -300)
+current = t.pos() # 현재 위치 좌표 확인
+# 거리계산 함수 호출
+fin = manhattan_distance(start, current)
 
+# 현재 위치와 distance를 비교
+if fin == distance:
+    print('⭐⭐⭐종점에 도착했습니다.⭐⭐')
