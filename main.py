@@ -44,11 +44,11 @@ def is_inside_obstacle(x, y):
 
 # 장애물 충돌 확인
 def check_direction_safety(heading):
-    """특정 방향으로 5픽셀 이동 시 장애물과 충돌 여부 확인"""
+    """특정 방향으로 3픽셀 이동 시 장애물과 충돌 여부 확인"""
     test_x = t.xcor() + 3 * math.cos(math.radians(heading))
     test_y = t.ycor() + 3 * math.sin(math.radians(heading))
     is_colliding = is_inside_obstacle(test_x, test_y)
-    print(is_colliding)
+    #(is_colliding)
     print(f"이동 후 위치: ({test_x:.1f}, {test_y:.1f}) {'⚠️ 충돌!' if is_colliding else '✅ 안전함'}")
     return not is_colliding  # True면 안전
 
@@ -104,17 +104,11 @@ while manhattan_distance(t.pos(), end) > 10:
     else:
         t.forward(10)
 
-#### 종점 도착 확인용 ####
-distance = manhattan_distance(start, end)
-# print("종점까지의 거리 :", distance)
-# print('현재 위치 : ', t.pos())
-start = (-400, -300)
-current = t.pos() # 현재 위치 좌표 확인
-# 거리계산 함수 호출
-fin = manhattan_distance(start, current)
 
-# fin과 distance를 비교
-if fin == distance:
+# 거리계산 함수 사용
+final_distance = manhattan_distance(t.pos(), end)
+
+if final_distance <= 10:
     print('⭐⭐⭐종점에 도착했습니다.⭐⭐')
 
 turtle.done()
