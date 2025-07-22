@@ -81,7 +81,8 @@ while manhattan_distance(t.pos(), end) > 10:
 | `manhattan_distance(a, b)` | 두 좌표 간 맨해튼 거리 계산 |
 
 ### 함수 실행 결과에 따른 터미널 print 출력 화면
-<img width="300" height="270" alt="image" src="https://github.com/user-attachments/assets/382fd1bf-914b-47ca-b586-7853c9b14646" />
+<img width="350" height="300" alt="image" src="https://github.com/user-attachments/assets/7fff7cef-03e9-4924-b3d6-41d0d72f390e" />
+
 
 ---
 
