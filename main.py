@@ -1,5 +1,5 @@
 import turtle
-#from ptpython.repl import embed
+from ptpython.repl import embed
 
 s = turtle.getscreen() # 스크린 호출
 t = turtle.Turtle() # 터틀 호출
@@ -7,6 +7,18 @@ t = turtle.Turtle() # 터틀 호출
 # 장애물 그릴  터틀
 obstacle = turtle.Turtle()
 obstacle.penup()
+
+# 거리 계산 함수
+def manhattan_distance(a, b):
+    return abs(a[0] - b[0]) + abs(a[1] - b[1])
+
+# 거리 계산
+start = (-400, -300)
+end = (400, 300)
+distance = manhattan_distance(start, end)
+print("종점까지의 거리 :", distance)
+
+# embed(globals(), locals())
 
 # 네모 장애물 (가운데 0,0 중심)
 obstacle.goto(-50, -50)  # 왼쪽 아래 꼭짓점
@@ -41,3 +53,5 @@ t.setheading(30)      # 오른쪽
 t.forward(200)
 t.setheading(20)    # 방향 조정
 t.goto(400, 300) # 종점 도착
+
+
